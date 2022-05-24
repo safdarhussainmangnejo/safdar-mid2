@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+</head>
+<body>
+
+  <%- include('navbar') -%>
+  
+  <div class="container w-30 border py-5 text-center ">
+    <h1>Users List</h1>
+    
+    
+    <% if(items!=0) { %>
+      <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">City</th>
+            <th scope="col">Zipcode</th>
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% items.forEach((row , index) =>{ %>
+              <tr>
+                <td><img src="<%= row.image %>" width="100px"  class="img-thumbnail" /></td>
+                <td><%= row.fullname %></td>
+                <td><%= row.email %></td>
+                <td><%= row.number %></td>
+                <td><%= row.city %></td>
+                <td><%= row.zipcode %></td>
+                <td id="<%= row._id %>"><a href="viewproduct/<%= row._id %>" type="button" class="btn btn-primary"/>View</a></td>
+                <td id="<%= row._id %>"><a href="update/<%= row._id%>" type="button" class="btn btn-primary"/>Update</a></td>
+                <td id= "<%= row._id %>"><a href="delete/<%= row._id %>" type="button" class="btn btn-primary"/>Delete</a></td>
+              </tr>
+                
+           <% }) %>
+    
+         
+        </tbody>
+      </table>
+    <% } else {%>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>No Data</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%} %>
+
+</div>
+<%- include('footer') -%>
+</body>
+</html> 

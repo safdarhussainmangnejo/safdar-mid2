@@ -1,0 +1,27 @@
+<%- include('header') %>
+
+<div class="text-center center" style="margin-top: 50px;"><h2>Search</h2></div>
+<p></p>
+<div class="container w-25 border py-5 text-center">
+    <div class="mb-3 inline-block">
+        <input class="form-control" type="text" name="texxt"  placeholder="email"/>
+        <p></p>
+
+        <button class="btn btn-primary">Search</button>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="/<%= items.image %>" width="100px"  class="img-thumbnail" />
+        <div class="card-body">
+          <h5 class="card-title"><%= items.name %></h5>
+          <h6 class="card-title"><%= items.price %></h6>
+          
+        </div>
+      </div>
+
+</div>
+
+
+
+<%- include('footer') %>
+
