@@ -1,8 +1,14 @@
 const express = require('express')
 const router = express.Router();
-const{home_call,about_call,addproduct_call, insertUser, showUsers, upload, viewProduct_by_id,
-     deleteProduct_by_id, updateProduct, updateProduct_byID, loginpage, signuppage, registerUser,
-     verifyUser} = require('../controller/userController')
+const{home_call,
+     adduser_call, 
+     insertUser, 
+     showUsers, 
+     upload, 
+     viewUser_by_id, 
+     deleteUser_by_id, 
+     updateUser,
+     updateUser_byID,} = require('../controller/userController')
 
 router.get('/',home_call)
 router.get('/login',loginpage)
